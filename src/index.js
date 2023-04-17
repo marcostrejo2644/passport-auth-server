@@ -42,6 +42,10 @@ app.use(passport.initialize())
 app.use(passport.session())
 app.use(express.json())
 
+app.get('/', (req, res) => {
+  res.send('ServerUp')
+})
+
 app.use('/api/v1', routes)
 
 app.listen(port, () => console.log(`Server on http://localhost:${port}`))
